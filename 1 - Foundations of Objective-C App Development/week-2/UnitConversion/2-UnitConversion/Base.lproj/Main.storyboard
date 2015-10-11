@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7SJ-xh-mpP">
+                                <rect key="frame" x="70" y="119" width="180" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NT3-r3-EuN"/>
+                                    <constraint firstAttribute="width" constant="180" id="zeq-M5-j4r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in inches" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THI-KS-Kdv">
+                                <rect key="frame" x="127" y="174" width="68" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sha-Ux-mDF">
+                                <rect key="frame" x="35" y="226" width="250" height="29"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="32v-8H-PCv"/>
+                                    <constraint firstAttribute="height" constant="28" id="OVD-PB-Yxg"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Feet"/>
+                                    <segment title="Meters"/>
+                                    <segment title="Cm"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45x-7C-QXQ">
+                                <rect key="frame" x="135" y="269" width="51" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="update:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K4K-eo-uHt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Update to see result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxE-gu-18C">
+                                <rect key="frame" x="61" y="358" width="198" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="198" id="BVa-fd-FVn"/>
+                                    <constraint firstAttribute="height" constant="21" id="QK8-0k-tJE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="THI-KS-Kdv" firstAttribute="top" secondItem="7SJ-xh-mpP" secondAttribute="bottom" constant="25" id="3Wb-iN-Bdg"/>
+                            <constraint firstAttribute="centerX" secondItem="7SJ-xh-mpP" secondAttribute="centerX" id="7uW-hl-r9M"/>
+                            <constraint firstItem="sha-Ux-mDF" firstAttribute="top" secondItem="THI-KS-Kdv" secondAttribute="bottom" constant="31" id="BDd-2Y-IIa"/>
+                            <constraint firstItem="BxE-gu-18C" firstAttribute="top" secondItem="45x-7C-QXQ" secondAttribute="bottom" constant="59" id="War-Cx-eOj"/>
+                            <constraint firstAttribute="centerX" secondItem="THI-KS-Kdv" secondAttribute="centerX" constant="-1" id="Y0a-LT-EXE"/>
+                            <constraint firstAttribute="centerX" secondItem="BxE-gu-18C" secondAttribute="centerX" id="aHi-Ws-d9h"/>
+                            <constraint firstAttribute="centerX" secondItem="45x-7C-QXQ" secondAttribute="centerX" id="lc1-Ah-0tF"/>
+                            <constraint firstItem="7SJ-xh-mpP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="99" id="uag-y1-Oth"/>
+                            <constraint firstAttribute="centerX" secondItem="sha-Ux-mDF" secondAttribute="centerX" id="wBM-Ec-2Mf"/>
+                            <constraint firstItem="45x-7C-QXQ" firstAttribute="top" secondItem="sha-Ux-mDF" secondAttribute="bottom" constant="15" id="xZz-Dt-aP9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputField" destination="7SJ-xh-mpP" id="f7p-yq-e92"/>
+                        <outlet property="outputField" destination="BxE-gu-18C" id="62N-cr-mZi"/>
+                        <outlet property="segmentController" destination="sha-Ux-mDF" id="8jT-x1-hGT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="289"/>
+        </scene>
+    </scenes>
+</document>
