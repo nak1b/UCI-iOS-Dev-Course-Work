@@ -16,8 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4z-dc-2UB">
-                                <rect key="frame" x="253" y="289" width="94" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmL-BY-kBb">
+                                <rect key="frame" x="265" y="285" width="71" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Click Here"/>
+                                <connections>
+                                    <action selector="btnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZIW-cF-etw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text To Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4z-dc-2UB">
+                                <rect key="frame" x="240" y="218" width="120" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -27,10 +35,15 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="P4z-dc-2UB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HTu-dI-hwB"/>
-                            <constraint firstItem="P4z-dc-2UB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gbh-Vp-MO1"/>
+                            <constraint firstItem="P4z-dc-2UB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8s9-b3-5zF"/>
+                            <constraint firstItem="gmL-BY-kBb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CHx-Fb-xpY"/>
+                            <constraint firstItem="gmL-BY-kBb" firstAttribute="top" secondItem="P4z-dc-2UB" secondAttribute="bottom" constant="46" id="Ke6-mF-Mq6"/>
+                            <constraint firstItem="gmL-BY-kBb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bQK-HE-9tz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="P4z-dc-2UB" id="8Q2-NC-aHZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
