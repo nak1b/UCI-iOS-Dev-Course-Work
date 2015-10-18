@@ -10,18 +10,27 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *userInput;
+@property (weak, nonatomic) IBOutlet UILabel *currency1;
+@property (weak, nonatomic) IBOutlet UILabel *currency2;
+@property (weak, nonatomic) IBOutlet UILabel *currency3;
+@property (weak, nonatomic) IBOutlet UIButton *convertBtn;
+
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (IBAction)convertPress:(id)sender {
+    //disable  button
+    self.convertBtn.enabled = NO;
+    
+    self.currency1.text = @"A";
+    self.currency2.text = @"B";
+    self.currency3.text = @"C";
+    
+    //disable  button
+    self.convertBtn.enabled = YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

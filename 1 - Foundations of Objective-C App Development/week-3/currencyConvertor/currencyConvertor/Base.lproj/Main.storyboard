@@ -22,6 +22,9 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="convertPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6q4-pj-kdF"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="amount in US Dollars" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-Jl-V5m">
                                 <rect key="frame" x="20" y="205" width="280" height="30"/>
@@ -121,6 +124,13 @@
                             <constraint firstItem="zLD-iQ-ID8" firstAttribute="top" secondItem="xuK-ZG-dLO" secondAttribute="bottom" constant="23" id="xeP-cg-S8o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="convertBtn" destination="fPd-Va-Cj9" id="Rrm-0D-AxC"/>
+                        <outlet property="currency1" destination="xuK-ZG-dLO" id="7xE-ug-oi7"/>
+                        <outlet property="currency2" destination="zLD-iQ-ID8" id="5n1-bY-Ddr"/>
+                        <outlet property="currency3" destination="HpP-ln-IM0" id="bvn-w7-l9o"/>
+                        <outlet property="userInput" destination="QOQ-Jl-V5m" id="dyC-dG-RiU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
