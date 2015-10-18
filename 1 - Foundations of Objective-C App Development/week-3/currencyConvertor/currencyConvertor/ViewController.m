@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "CurrencyRequest/CRCurrencyRequest.h"
+#import "CurrencyRequest/CRCurrencyResults.h"
 
-@interface ViewController ()
+@interface ViewController () <CRCurrencyRequestDelegate>
 
+@property (nonatomic) CRCurrencyRequest *req;
 @property (weak, nonatomic) IBOutlet UITextField *userInput;
 @property (weak, nonatomic) IBOutlet UILabel *currency1;
 @property (weak, nonatomic) IBOutlet UILabel *currency2;
@@ -24,13 +27,29 @@
     //disable  button
     self.convertBtn.enabled = NO;
     
-    self.currency1.text = @"A";
-    self.currency2.text = @"B";
-    self.currency3.text = @"C";
+    self.req = [[CRCurrencyRequest alloc] init];
+    self.req.delegate = self;
+    [self.req start];
     
-    //disable  button
-    self.convertBtn.enabled = YES;
 }
 
+- (void)currencyRequest:(CRCurrencyRequest *)req
+    retrievedCurrencies:(CRCurrencyResults *)currencies{
+    //enable button
+    self.convertBtn.enabled = YES;
+    
+    double inputValue = [self.userInput.text doubleValue];
+    double euroValue = inputValue * currencies.EUR;
+    NSString *temp = [NSString stringWithFormat:@"%.2f", euroValue];
+    self.currency1.text = temp;
+    
+    double inrValue = inputValue * currencies.INR;
+    temp = [NSString stringWithFormat:@"%.2f", inrValue];
+    self.currency2.text = temp;
+    
+    double yenValue = inputValue * currencies.JPY;
+    temp = [NSString stringWithFormat:@"%.2f", yenValue];
+    self.currency3.text = temp;
+}
 
 @end
