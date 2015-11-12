@@ -13,9 +13,11 @@
 		31F17D741BF4282600E23214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F17D721BF4282600E23214 /* Main.storyboard */; };
 		31F17D761BF4282600E23214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F17D751BF4282600E23214 /* Assets.xcassets */; };
 		31F17D791BF4282600E23214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F17D771BF4282600E23214 /* LaunchScreen.storyboard */; };
+		8D10234E00FC08578B80260E /* libPods-DistanceCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BB97AF0895EDE7F378FFA9 /* libPods-DistanceCalculator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20BB97AF0895EDE7F378FFA9 /* libPods-DistanceCalculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DistanceCalculator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F17D661BF4282600E23214 /* DistanceCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F17D6A1BF4282600E23214 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31F17D6C1BF4282600E23214 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		31F17D751BF4282600E23214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31F17D781BF4282600E23214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31F17D7A1BF4282600E23214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A53ECCC9D6FB88D93B74F432 /* Pods-DistanceCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistanceCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DistanceCalculator/Pods-DistanceCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		F6C2EF47C92025B0E6442831 /* Pods-DistanceCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistanceCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-DistanceCalculator/Pods-DistanceCalculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D10234E00FC08578B80260E /* libPods-DistanceCalculator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				31F17D681BF4282600E23214 /* DistanceCalculator */,
 				31F17D671BF4282600E23214 /* Products */,
+				633E42C53B14258D0B711842 /* Pods */,
+				ECC2A6402CF8D440742DF4DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		633E42C53B14258D0B711842 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A53ECCC9D6FB88D93B74F432 /* Pods-DistanceCalculator.debug.xcconfig */,
+				F6C2EF47C92025B0E6442831 /* Pods-DistanceCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ECC2A6402CF8D440742DF4DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20BB97AF0895EDE7F378FFA9 /* libPods-DistanceCalculator.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31F17D7D1BF4282600E23214 /* Build configuration list for PBXNativeTarget "DistanceCalculator" */;
 			buildPhases = (
+				DE2258896B055DA4D4414BCB /* Check Pods Manifest.lock */,
 				31F17D621BF4282600E23214 /* Sources */,
 				31F17D631BF4282600E23214 /* Frameworks */,
 				31F17D641BF4282600E23214 /* Resources */,
+				B4C46039A893825ED96E993D /* Embed Pods Frameworks */,
+				27DB97043521D42E3A3C0DBB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27DB97043521D42E3A3C0DBB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DistanceCalculator/Pods-DistanceCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4C46039A893825ED96E993D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DistanceCalculator/Pods-DistanceCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE2258896B055DA4D4414BCB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		31F17D621BF4282600E23214 /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		31F17D7E1BF4282600E23214 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A53ECCC9D6FB88D93B74F432 /* Pods-DistanceCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DistanceCalculator/Info.plist;
@@ -272,6 +348,7 @@
 		};
 		31F17D7F1BF4282600E23214 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6C2EF47C92025B0E6442831 /* Pods-DistanceCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DistanceCalculator/Info.plist;
@@ -300,6 +377,7 @@
 				31F17D7F1BF4282600E23214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
