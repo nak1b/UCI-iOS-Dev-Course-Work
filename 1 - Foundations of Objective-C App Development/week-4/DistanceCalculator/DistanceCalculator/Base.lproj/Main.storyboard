@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,13 +17,109 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-map-maker" translatesAutoresizingMaskIntoConstraints="NO" id="d14-ji-kzk">
+                                <rect key="frame" x="16" y="20" width="288" height="149"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="yaE-RF-fMR"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Location To Start" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIL-yy-ldV">
+                                <rect key="frame" x="20" y="197" width="280" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="1Yc-dT-9oY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-dC-mE8">
+                                <rect key="frame" x="96" y="263" width="129" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Km"/>
+                                    <segment title="Meteres"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Place" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-xQ-RdF">
+                                <rect key="frame" x="20" y="385" width="153" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Place" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="587-E3-PDU">
+                                <rect key="frame" x="20" y="436" width="153" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDo-5a-GtK">
+                                <rect key="frame" x="181" y="334" width="119" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMQ-O8-RPN">
+                                <rect key="frame" x="181" y="385" width="119" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyq-5t-JWW">
+                                <rect key="frame" x="181" y="436" width="119" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7de-2S-e6N">
+                                <rect key="frame" x="96" y="501" width="128" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Calculate Distance"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Place" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bYO-ab-Na2">
+                                <rect key="frame" x="20" y="334" width="153" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oyq-5t-JWW" firstAttribute="leading" secondItem="587-E3-PDU" secondAttribute="trailing" constant="8" id="1d7-4D-bcy"/>
+                            <constraint firstItem="FbI-dC-mE8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="21u-46-d3x"/>
+                            <constraint firstItem="EDo-5a-GtK" firstAttribute="leading" secondItem="bYO-ab-Na2" secondAttribute="trailing" constant="8" id="2A5-AJ-Rmz"/>
+                            <constraint firstItem="oyq-5t-JWW" firstAttribute="centerY" secondItem="587-E3-PDU" secondAttribute="centerY" id="6Om-kU-itT"/>
+                            <constraint firstItem="oyq-5t-JWW" firstAttribute="top" secondItem="FbI-dC-mE8" secondAttribute="bottom" constant="145" id="8QX-0H-jCV"/>
+                            <constraint firstItem="aMQ-O8-RPN" firstAttribute="centerY" secondItem="Q8w-xQ-RdF" secondAttribute="centerY" id="Fys-sF-zQ6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="d14-ji-kzk" secondAttribute="leading" id="Gm2-gP-U6H"/>
+                            <constraint firstItem="d14-ji-kzk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IXf-LI-N4I"/>
+                            <constraint firstItem="EDo-5a-GtK" firstAttribute="top" secondItem="FbI-dC-mE8" secondAttribute="bottom" constant="43" id="O4n-X6-uGK"/>
+                            <constraint firstItem="FbI-dC-mE8" firstAttribute="top" secondItem="lIL-yy-ldV" secondAttribute="bottom" constant="36" id="Qcf-OM-h87"/>
+                            <constraint firstItem="587-E3-PDU" firstAttribute="top" secondItem="Q8w-xQ-RdF" secondAttribute="bottom" constant="21" id="a8r-C8-fSI"/>
+                            <constraint firstItem="7de-2S-e6N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e7s-Vx-QuX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d14-ji-kzk" secondAttribute="trailing" id="h2l-pN-s92"/>
+                            <constraint firstItem="lIL-yy-ldV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jzF-hD-Lux"/>
+                            <constraint firstItem="bYO-ab-Na2" firstAttribute="top" secondItem="FbI-dC-mE8" secondAttribute="bottom" constant="43" id="nJG-5e-fuB"/>
+                            <constraint firstItem="aMQ-O8-RPN" firstAttribute="leading" secondItem="Q8w-xQ-RdF" secondAttribute="trailing" constant="8" id="nMP-m9-wm2"/>
+                            <constraint firstItem="EDo-5a-GtK" firstAttribute="centerY" secondItem="bYO-ab-Na2" secondAttribute="centerY" id="vps-Bz-ydf"/>
+                            <constraint firstItem="aMQ-O8-RPN" firstAttribute="top" secondItem="FbI-dC-mE8" secondAttribute="bottom" constant="94" id="vzj-st-Xxz"/>
+                            <constraint firstItem="7de-2S-e6N" firstAttribute="top" secondItem="587-E3-PDU" secondAttribute="bottom" constant="35" id="w9r-cI-WvS"/>
+                            <constraint firstItem="lIL-yy-ldV" firstAttribute="top" secondItem="d14-ji-kzk" secondAttribute="bottom" constant="28" id="zK5-xi-sLo"/>
+                            <constraint firstItem="Q8w-xQ-RdF" firstAttribute="top" secondItem="bYO-ab-Na2" secondAttribute="bottom" constant="21" id="zqR-VJ-WE6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.66666666666666" y="298.67333333333335"/>
+            <point key="canvasLocation" x="130" y="298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo-map-maker" width="913" height="325"/>
+    </resources>
 </document>
