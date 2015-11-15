@@ -35,11 +35,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-dC-mE8">
-                                <rect key="frame" x="96" y="263" width="129" height="29"/>
+                                <rect key="frame" x="114" y="263" width="93" height="29"/>
                                 <animations/>
                                 <segments>
                                     <segment title="Km"/>
-                                    <segment title="Meteres"/>
+                                    <segment title="Miles"/>
                                 </segments>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Place" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-xQ-RdF">

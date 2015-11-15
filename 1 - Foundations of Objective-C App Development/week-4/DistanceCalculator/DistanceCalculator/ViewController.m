@@ -49,7 +49,6 @@
     NSString *destC = self.endLocationC.text;
     
     NSArray *destArr = @[destA, destB, destC];
-    self.endLabelA.text = start;
     
     self.req = [self.req initWithLocationDescriptions:destArr sourceDescription:start];
     
@@ -59,10 +58,46 @@
         ViewController *strongSelf = weakSelf;
         if(!strongSelf){ return;}
         
-        self.endLocationC.text = @"Working";
-        self.calculateBtn.enabled = YES;
-        self.req = nil;
-      
+        NSNull *badResult = [NSNull null];
+        double divider = 0;
+        NSString *unit = @"";
+        
+        if(strongSelf.unitSelector.selectedSegmentIndex == 0){
+            divider = 1000.0;
+            unit = @"Km";
+        }else{
+            divider = 1609.34;
+            unit = @"Mile";
+        }
+        
+        if(responses[0] != badResult){
+            double resA = ([responses[0] floatValue]/divider);
+            NSString *a = [NSString stringWithFormat:@"%.2f %@", resA, unit];
+            strongSelf.endLabelA.text = a;
+        }else{
+            strongSelf.endLabelA.text = @"Error";
+        }
+        
+        if(responses[1] != badResult){
+            double resB = ([responses[1] floatValue]/divider);
+            NSString *b = [NSString stringWithFormat:@"%.2f %@", resB, unit];
+            strongSelf.endLabelB.text = b;
+
+        }else{
+            strongSelf.endLabelB.text = @"Error";
+        }
+        
+        if(responses[2] != badResult){
+            double resC = ([responses[2] floatValue]/divider);
+            NSString *c = [NSString stringWithFormat:@"%.2f %@", resC, unit];
+            strongSelf.endLabelC.text = c;
+
+        }else{
+             strongSelf.endLabelC.text = @"Error";
+        }
+        
+        strongSelf.req = nil;
+        strongSelf.calculateBtn.enabled = YES;
     };
     
     [self.req start];
