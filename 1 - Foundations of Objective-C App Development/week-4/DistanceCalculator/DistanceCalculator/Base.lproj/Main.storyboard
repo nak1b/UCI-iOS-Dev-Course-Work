@@ -79,6 +79,9 @@
                                 <rect key="frame" x="96" y="501" width="128" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Calculate Distance"/>
+                                <connections>
+                                    <action selector="calculateBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ob-Rt-Gc1"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Place" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bYO-ab-Na2">
                                 <rect key="frame" x="20" y="334" width="153" height="30"/>
@@ -113,6 +116,17 @@
                             <constraint firstItem="Q8w-xQ-RdF" firstAttribute="top" secondItem="bYO-ab-Na2" secondAttribute="bottom" constant="21" id="zqR-VJ-WE6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculateBtn" destination="7de-2S-e6N" id="z2v-8T-jcM"/>
+                        <outlet property="endLabelA" destination="EDo-5a-GtK" id="Als-Li-gAH"/>
+                        <outlet property="endLabelB" destination="aMQ-O8-RPN" id="epm-bW-xPb"/>
+                        <outlet property="endLabelC" destination="oyq-5t-JWW" id="Nea-Sz-248"/>
+                        <outlet property="endLocationA" destination="bYO-ab-Na2" id="cDW-rd-g7p"/>
+                        <outlet property="endLocationB" destination="Q8w-xQ-RdF" id="Dys-Sh-bkk"/>
+                        <outlet property="endLocationC" destination="587-E3-PDU" id="8vu-Ub-5iP"/>
+                        <outlet property="startLocation" destination="lIL-yy-ldV" id="QkH-rr-pYx"/>
+                        <outlet property="unitSelector" destination="FbI-dC-mE8" id="KJA-te-1Mr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

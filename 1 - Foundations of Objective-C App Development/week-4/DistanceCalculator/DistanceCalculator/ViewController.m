@@ -7,8 +7,25 @@
 //
 
 #import "ViewController.h"
+#import "DistanceGetter/DGDistanceRequest.h"
 
 @interface ViewController ()
+
+@property (nonatomic) DGDistanceRequest *req;
+
+@property (weak, nonatomic) IBOutlet UITextField *startLocation;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *unitSelector;
+
+@property (weak, nonatomic) IBOutlet UITextField *endLocationA;
+@property (weak, nonatomic) IBOutlet UITextField *endLocationB;
+@property (weak, nonatomic) IBOutlet UITextField *endLocationC;
+
+@property (weak, nonatomic) IBOutlet UILabel *endLabelA;
+@property (weak, nonatomic) IBOutlet UILabel *endLabelB;
+@property (weak, nonatomic) IBOutlet UILabel *endLabelC;
+
+@property (weak, nonatomic) IBOutlet UIButton *calculateBtn;
 
 @end
 
@@ -22,6 +39,21 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)calculateBtnPressed:(id)sender {
+    self.calculateBtn.enabled = NO;
+    self.req = [DGDistanceRequest alloc];
+    NSString *start = self.startLocation.text;
+    NSString *destA = self.endLocationA.text;
+    NSString *destB = self.endLocationB.text;
+    NSString *destC = self.endLocationC.text;
+    
+    NSArray *destArr = @[destA, destB, destC];
+    self.endLabelA.text = start;
+    
+    self.req = [self.req initWithLocationDescriptions:destArr sourceDescription:start];
+    self.calculateBtn.enabled = YES;
+    
 }
 
 @end
