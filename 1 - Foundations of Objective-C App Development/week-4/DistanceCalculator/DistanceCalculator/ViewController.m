@@ -52,7 +52,22 @@
     self.endLabelA.text = start;
     
     self.req = [self.req initWithLocationDescriptions:destArr sourceDescription:start];
-    self.calculateBtn.enabled = YES;
+    
+    __weak ViewController *weakSelf = self;
+    
+    self.req.callback = ^(NSArray *responses){
+        ViewController *strongSelf = weakSelf;
+        if(!strongSelf){ return;}
+        
+        self.endLocationC.text = @"Working";
+        self.calculateBtn.enabled = YES;
+        self.req = nil;
+      
+    };
+    
+    [self.req start];
+    
+   
     
 }
 
