@@ -62,6 +62,11 @@
                                             <action selector="fbSharePress:" destination="BYZ-38-t0r" id="8e9-4S-7pP"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="action" id="Sd7-Pz-Jfj">
+                                        <connections>
+                                            <action selector="activityBtnPress:" destination="BYZ-38-t0r" id="c0c-nx-NCe"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

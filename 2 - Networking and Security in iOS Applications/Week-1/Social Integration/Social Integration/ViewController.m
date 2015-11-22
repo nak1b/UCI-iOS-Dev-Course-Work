@@ -42,33 +42,24 @@
     if([self.twitterTextView isFirstResponder]){
         [self.twitterTextView resignFirstResponder];
     }
-   
-    //Creating Modal
-    UIAlertController *twitterAlert = [UIAlertController alertControllerWithTitle:@"Twitter Share" message:@"Some Message" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *share = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDefault handler:
-                            ^(UIAlertAction* action){
-                                if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
-                                    NSString *tweetText;
-                                    //checking if length of text is less then 140
-                                    if([self.twitterTextView.text length]<140){
-                                         tweetText = self.twitterTextView.text;
-                                    }else{
-                                        tweetText = [self.twitterTextView.text substringToIndex:140];
-                                    }
-                                    SLComposeViewController *twitterAlertController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-                                    [twitterAlertController setInitialText:tweetText];
-                                    [self presentViewController:twitterAlertController animated:YES completion:nil];
-                                    
-                                }else{
-                                    [self showAlertMessage:@"Please singin to twitter"];
-                                }
-                            }];
     
-    [twitterAlert addAction:share];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@
-                             "Cancel" style:UIAlertActionStyleCancel handler:nil];
-    [twitterAlert addAction:cancel];
-    [self presentViewController:twitterAlert animated:YES completion:nil];
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+        NSString *tweetText;
+        //checking if length of text is less then 140
+        if([self.twitterTextView.text length]<140){
+            tweetText = self.twitterTextView.text;
+        }else{
+            tweetText = [self.twitterTextView.text substringToIndex:140];
+        }
+        SLComposeViewController *twitterAlertController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [twitterAlertController setInitialText:tweetText];
+        [self presentViewController:twitterAlertController animated:YES completion:nil];
+        
+    }else{
+        [self showAlertMessage:@"Please singin to twitter"];
+    }
+   
+ 
 }
 
 //Facebook Sharing
@@ -81,6 +72,13 @@
         [self showAlertMessage:@"Please singin to facebook before"];
     }
 }
+
+//Activity View
+- (IBAction)activityBtnPress:(UIBarButtonItem *)sender {
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:@[self.twitterTextView.text] applicationActivities:nil];
+    [self presentViewController:activityController animated:YES completion:nil];
+}
+
 
 - (void)configureTextViewStyle{
     self.twitterTextView.layer.backgroundColor = [UIColor colorWithRed:252/255.0 green:216/255.0 blue:199/255.0 alpha:1].CGColor;
