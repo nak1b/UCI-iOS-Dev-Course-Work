@@ -46,9 +46,17 @@
     UIAlertAction *share = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDefault handler:
                             ^(UIAlertAction* action){
                                 if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+                                    NSString *tweetText;
+                                    //checking if length of text is less then 140
+                                    if([self.twitterTextView.text length]<140){
+                                         tweetText = self.twitterTextView.text;
+                                    }else{
+                                        tweetText = [self.twitterTextView.text substringToIndex:140];
+                                    }
                                     SLComposeViewController *twitterAlertController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-                                    [twitterAlertController setInitialText:self.twitterTextView.text];
+                                    [twitterAlertController setInitialText:tweetText];
                                     [self presentViewController:twitterAlertController animated:YES completion:nil];
+                                    
                                 }else{
                                     [self showAlertMessage:@"Please singin to twitter"];
                                 }
