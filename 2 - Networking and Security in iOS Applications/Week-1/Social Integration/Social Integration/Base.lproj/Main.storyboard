@@ -18,17 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0x-CY-0dy">
-                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
-                                <animations/>
-                                <items>
-                                    <barButtonItem systemItem="action" id="dVX-Xa-OvU">
-                                        <connections>
-                                            <action selector="shareTweetPressed:" destination="BYZ-38-t0r" id="2kx-YD-g7N"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Py-40-Axn">
                                 <rect key="frame" x="-4" y="64" width="328" height="155"/>
                                 <animations/>
@@ -59,6 +48,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0x-CY-0dy">
+                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="dVX-Xa-OvU">
+                                        <connections>
+                                            <action selector="shareTweetPressed:" destination="BYZ-38-t0r" id="2kx-YD-g7N"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="wQB-fY-3rN">
+                                        <connections>
+                                            <action selector="fbSharePress:" destination="BYZ-38-t0r" id="8e9-4S-7pP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -79,6 +84,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fbTextView" destination="TOO-zc-waK" id="Ix8-gz-Evk"/>
                         <outlet property="twitterTextView" destination="9Py-40-Axn" id="CNO-hJ-lbZ"/>
                     </connections>
                 </viewController>

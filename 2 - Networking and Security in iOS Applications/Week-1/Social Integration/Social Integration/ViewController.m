@@ -12,6 +12,7 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *twitterTextView;
+@property (weak, nonatomic) IBOutlet UITextView *fbTextView;
 
 @end
 
@@ -35,6 +36,7 @@
     [self presentViewController:warningController animated:YES completion:nil];
 }
 
+//Twitter Sharing
 - (IBAction)shareTweetPressed:(UIBarButtonItem *)sender {
     //closing if keyboard open
     if([self.twitterTextView isFirstResponder]){
@@ -67,6 +69,17 @@
                              "Cancel" style:UIAlertActionStyleCancel handler:nil];
     [twitterAlert addAction:cancel];
     [self presentViewController:twitterAlert animated:YES completion:nil];
+}
+
+//Facebook Sharing
+- (IBAction)fbSharePress:(UIBarButtonItem *)sender {
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
+        SLComposeViewController *fbController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [fbController setInitialText:self.fbTextView.text];
+        [self presentViewController:fbController animated:YES completion:nil];
+    }else{
+        [self showAlertMessage:@"Please singin to facebook before"];
+    }
 }
 
 - (void)configureTextViewStyle{
