@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NXOAuth2.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +17,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [[NXOAuth2AccountStore sharedStore] setClientID:@"d1bc2a0f3c694d25b5d61fd4edebeec0"
+                                             secret:@"2716cd8921354a788c4a92d45a449d64"
+                                   authorizationURL:[NSURL URLWithString:@"https://api.instagram.com/oauth/authorize"]
+                                           tokenURL:[NSURL URLWithString:@"https://api.instagram.com/oauth/access_token"]
+                                        redirectURL:[NSURL URLWithString:@"photoFeed://authenticated"]
+                                     forAccountType:@"Instagram"];
     return YES;
+}
+
+//Callback handler after instgram login
+- (BOOL) application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
+    NSLog(@"Recieved callback");
+    return [[NXOAuth2AccountStore sharedStore] handleRedirectURL:url];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

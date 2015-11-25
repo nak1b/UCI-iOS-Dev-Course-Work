@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NXOAuth2.h"
 
 @interface ViewController ()
 
@@ -30,6 +31,7 @@
 }
 
 - (IBAction)loginBtnPressed:(UIButton *)sender {
+    [[NXOAuth2AccountStore sharedStore] requestAccessToAccountWithType:@"Instagram"];
 }
 
 - (IBAction)logoutBtnPressed:(UIButton *)sender {
