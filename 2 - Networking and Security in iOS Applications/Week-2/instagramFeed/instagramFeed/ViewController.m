@@ -77,7 +77,7 @@
         
         //check http error
         NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *) response;
-        if (httpResp.statusCode <300 || httpResp.statusCode >=300) {
+        if (httpResp.statusCode <200 || httpResp.statusCode >=300) {
              NSLog(@"Error: Got status code %ld", (long) httpResp.statusCode);
             return;
         }
@@ -89,6 +89,31 @@
             NSLog(@"Couldnt parse json %@", parseErr);
             return;
         }
+        
+        NSString *imgUrlStr = pkg[@"data"][0][@"images"][@"standard_resolution"][@"url"];
+        NSURL *imgUrl = [NSURL URLWithString:imgUrlStr];
+        [[session dataTaskWithURL:imgUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+            //check for network error
+            if(error){
+                NSLog(@"Can not finish the request %@", error);
+                return;
+            }
+            
+            //check http error
+            NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *) response;
+            if (httpResp.statusCode <200 || httpResp.statusCode >=300) {
+                NSLog(@"Error: Got status code %ld", (long) httpResp.statusCode);
+                return;
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageView.image = [UIImage imageWithData:data];
+            });
+            
+
+        }] resume];
+      
 
     }] resume];
 }
