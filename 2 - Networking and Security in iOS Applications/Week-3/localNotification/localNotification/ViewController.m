@@ -18,8 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestPermissionToNotify];
-    [self createNotification:10];
+    
     
 }
 
@@ -46,4 +45,10 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
     
 }
+
+- (IBAction)scheduleNotification:(UIButton *)sender {
+    [self requestPermissionToNotify];
+    [self createNotification:5];
+}
+
 @end
