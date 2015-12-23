@@ -28,6 +28,25 @@
 }
 
 - (void) requestPermissionToNotify{
+    UIMutableUserNotificationAction *floatAction = [[UIMutableUserNotificationAction init] alloc];
+    floatAction.identifier = @"FLOAT_ACTION";
+    floatAction.title = @"Float";
+    floatAction.activationMode = UIUserNotificationActivationModeBackground;
+    floatAction.destructive = NO;
+    floatAction.authenticationRequired = NO;
+    
+    UIMutableUserNotificationAction *stingAction = [[UIMutableUserNotificationAction init] alloc];
+    stingAction.identifier = @"STING_ACTION";
+    stingAction.title = @"Sting";
+    stingAction.activationMode = UIUserNotificationActivationModeForeground;
+    stingAction.destructive = NO;
+    stingAction.authenticationRequired = NO;
+    
+    UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory init] alloc];
+    category.identifier = @"MAIN_CATEGORY";
+    [category setActions:@[floatAction, stingAction] forContext:UIUserNotificationActionContextMinimal];
+    
+    
     UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
