@@ -28,27 +28,29 @@
 }
 
 - (void) requestPermissionToNotify{
-    UIMutableUserNotificationAction *floatAction = [[UIMutableUserNotificationAction init] alloc];
+    UIMutableUserNotificationAction *floatAction = [[UIMutableUserNotificationAction alloc] init];
     floatAction.identifier = @"FLOAT_ACTION";
     floatAction.title = @"Float";
     floatAction.activationMode = UIUserNotificationActivationModeBackground;
     floatAction.destructive = NO;
     floatAction.authenticationRequired = NO;
     
-    UIMutableUserNotificationAction *stingAction = [[UIMutableUserNotificationAction init] alloc];
+    UIMutableUserNotificationAction *stingAction = [[UIMutableUserNotificationAction alloc] init];
     stingAction.identifier = @"STING_ACTION";
     stingAction.title = @"Sting";
     stingAction.activationMode = UIUserNotificationActivationModeForeground;
     stingAction.destructive = NO;
     stingAction.authenticationRequired = NO;
     
-    UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory init] alloc];
+    UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
     category.identifier = @"MAIN_CATEGORY";
     [category setActions:@[floatAction, stingAction] forContext:UIUserNotificationActionContextMinimal];
     
+    NSSet *categories = [NSSet setWithObjects:category, nil];
+    
     
     UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
 
@@ -61,6 +63,8 @@
     localNotif.soundName = UILocalNotificationDefaultSoundName;
     localNotif.applicationIconBadgeNumber = 1;
     
+    localNotif.category = @"MAIN_CATEGORY";
+    [[UIApplication sharedApplication] scheduledLocalNotifications];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
     
 }
