@@ -13,9 +13,11 @@
 		31A6F8611C2CC87000F64BD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A6F85F1C2CC87000F64BD5 /* Main.storyboard */; };
 		31A6F8631C2CC87000F64BD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A6F8621C2CC87000F64BD5 /* Assets.xcassets */; };
 		31A6F8661C2CC87000F64BD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A6F8641C2CC87000F64BD5 /* LaunchScreen.storyboard */; };
+		32EB66D081B0A29D0DEFF748 /* libPods-remoteNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4A5D0027FC7F872A9CDE77 /* libPods-remoteNotification.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C4A5D0027FC7F872A9CDE77 /* libPods-remoteNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-remoteNotification.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A6F8531C2CC87000F64BD5 /* remoteNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = remoteNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A6F8571C2CC87000F64BD5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31A6F8591C2CC87000F64BD5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		31A6F8621C2CC87000F64BD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31A6F8651C2CC87000F64BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31A6F8671C2CC87000F64BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		820A450072FBDA0855826796 /* Pods-remoteNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-remoteNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-remoteNotification/Pods-remoteNotification.release.xcconfig"; sourceTree = "<group>"; };
+		E77420E0509008460ADEFA23 /* Pods-remoteNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-remoteNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-remoteNotification/Pods-remoteNotification.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32EB66D081B0A29D0DEFF748 /* libPods-remoteNotification.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				31A6F8551C2CC87000F64BD5 /* remoteNotification */,
 				31A6F8541C2CC87000F64BD5 /* Products */,
+				6CE6349B9766C12F9C2DD228 /* Pods */,
+				7210F94AC168DC2CB03181E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6CE6349B9766C12F9C2DD228 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E77420E0509008460ADEFA23 /* Pods-remoteNotification.debug.xcconfig */,
+				820A450072FBDA0855826796 /* Pods-remoteNotification.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7210F94AC168DC2CB03181E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C4A5D0027FC7F872A9CDE77 /* libPods-remoteNotification.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31A6F86A1C2CC87000F64BD5 /* Build configuration list for PBXNativeTarget "remoteNotification" */;
 			buildPhases = (
+				96D4DC6674B73B5C55E0CDA2 /* Check Pods Manifest.lock */,
 				31A6F84F1C2CC87000F64BD5 /* Sources */,
 				31A6F8501C2CC87000F64BD5 /* Frameworks */,
 				31A6F8511C2CC87000F64BD5 /* Resources */,
+				0229A2F0DBFB0906384F66E2 /* Embed Pods Frameworks */,
+				443B774C22446215854ADE34 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0229A2F0DBFB0906384F66E2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-remoteNotification/Pods-remoteNotification-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		443B774C22446215854ADE34 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-remoteNotification/Pods-remoteNotification-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96D4DC6674B73B5C55E0CDA2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		31A6F84F1C2CC87000F64BD5 /* Sources */ = {
@@ -267,6 +342,7 @@
 		};
 		31A6F86B1C2CC87000F64BD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E77420E0509008460ADEFA23 /* Pods-remoteNotification.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -281,6 +357,7 @@
 		};
 		31A6F86C1C2CC87000F64BD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 820A450072FBDA0855826796 /* Pods-remoteNotification.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -312,6 +389,7 @@
 				31A6F86C1C2CC87000F64BD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
