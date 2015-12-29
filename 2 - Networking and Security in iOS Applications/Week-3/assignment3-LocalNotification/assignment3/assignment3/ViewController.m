@@ -13,9 +13,26 @@
 @end
 
 @implementation ViewController
+- (void) notificationPermission{
+    UIUserNotificationType types = UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge;
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+}
+
+-(void) createNotificationObject:(int)numOfSec{
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    localNotif.alertTitle = @"Local Notification";
+    localNotif.alertBody = @"Notification Body";
+    localNotif.fireDate = [[NSDate date] dateByAddingTimeInterval:numOfSec];
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+    localNotif.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self notificationPermission];
+    [self createNotificationObject:5];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
