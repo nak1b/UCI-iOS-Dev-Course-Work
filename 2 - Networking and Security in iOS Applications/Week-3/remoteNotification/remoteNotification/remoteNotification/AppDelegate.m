@@ -18,13 +18,45 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-   
+    NSDictionary *remoteNotif = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    
+    if(remoteNotif){
+        NSString *message = remoteNotif[@"aps"][@"alert"];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Recieved on launch" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [application.keyWindow.rootViewController presentViewController:alert animated:true completion:nil];
+        });
+        
+    }
+    
+    
+    //configure parse params
+    [Parse setApplicationId:@"lE69GLqdQw1myhz8frSGk3M903vOeI9qRDDtrebc" clientKey:@"E1JU6PECsfvwNtxykiw0HKmwpFClTI80Gf8hpYaL"];
+    
+    
+    
     UIUserNotificationType userNotificationTypes = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
     UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes categories:nil];
     [application registerUserNotificationSettings:notificationSettings];
     [application registerForRemoteNotifications];
     return YES;
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)remoteNotif{
+    
+    NSString *message = remoteNotif[@"aps"][@"alert"];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Recieved on launch" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [application.keyWindow.rootViewController presentViewController:alert animated:true completion:nil];
+    });
+
+    
 }
 
 -(void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
