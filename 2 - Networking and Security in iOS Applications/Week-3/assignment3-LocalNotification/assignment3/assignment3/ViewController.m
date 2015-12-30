@@ -29,10 +29,14 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
 }
 
+- (IBAction)scheduleNotification:(id)sender {
+    [self notificationPermission];
+    [self createNotificationObject:15];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self notificationPermission];
-    [self createNotificationObject:5];
+   
     // Do any additional setup after loading the view, typically from a nib.
 }
 
