@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ChoreMO.h"
+#import "PersonMO.h"
+#import "ChoreLogMO.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +29,25 @@
     return YES;
 }
 
+#pragma mark - My Managed Object Code
+
+- (ChoreMO *) createChoreMO{
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    ChoreMO *choreMO = [NSEntityDescription insertNewObjectForEntityForName:@"Chores" inManagedObjectContext:moc];
+    return choreMO;
+}
+
+- (PersonMO *) createPersonMO{
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    PersonMO *personMO = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:moc];
+    return personMO;
+}
+
+- (ChoreLogMO *) createPersonMO{
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    ChoreLogMO *choreLogMo = [NSEntityDescription insertNewObjectForEntityForName:@"ChoreLog" inManagedObjectContext:moc];
+    return choreLogMo;
+}
 
 #pragma mark - Core Data stack
 

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15A284" minimumToolsVersion="Automatic">
+    <entity name="Chore" representedClassName="ChoreMO" syncable="YES">
+        <attribute name="chore_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chore_log" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChoreLog" inverseName="chore_done" inverseEntity="ChoreLog" syncable="YES"/>
+    </entity>
+    <entity name="ChoreLog" representedClassName="ChoreLogMO" syncable="YES">
+        <attribute name="when" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="chore_done" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chore" inverseName="chore_log" inverseEntity="Chore" syncable="YES"/>
+        <relationship name="person_who_did_it" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="PersonMO" syncable="YES">
+        <attribute name="person_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chore_log" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChoreLog" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Chore" positionX="-128" positionY="-90" width="128" height="73"/>
+        <element name="Person" positionX="-351" positionY="-0" width="128" height="73"/>
+        <element name="ChoreLog" positionX="-288" positionY="-216" width="128" height="88"/>
+    </elements>
 </model>
