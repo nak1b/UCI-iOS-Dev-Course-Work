@@ -2,8 +2,8 @@
 //  ChoreMO.m
 //  coreData
 //
-//  Created by Nakib on 12/30/15.
-//  Copyright © 2015 Nakib. All rights reserved.
+//  Created by Nakib on 1/13/16.
+//  Copyright © 2016 Nakib. All rights reserved.
 //
 
 #import "ChoreMO.h"

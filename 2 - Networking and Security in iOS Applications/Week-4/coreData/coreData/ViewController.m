@@ -12,6 +12,8 @@
 @interface ViewController ()
 
 @property (nonatomic) AppDelegate *appDelegate;
+@property (weak, nonatomic) IBOutlet UILabel *choreList;
+@property (weak, nonatomic) IBOutlet UITextField *chore_name;
 
 @end
 
@@ -26,6 +28,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)addChore:(UIButton *)sender {
+    ChoreMO *chore = [self.appDelegate createChoreMO];
+    chore.chore_name = self.chore_name.text;
+    [self.appDelegate saveContext];
+    [self updateLogList];
+    
+}
+
+-(void) updateLogList{
+    
 }
 
 @end

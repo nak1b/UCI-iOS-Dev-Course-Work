@@ -33,7 +33,7 @@
 
 - (ChoreMO *) createChoreMO{
     NSManagedObjectContext *moc = [self managedObjectContext];
-    ChoreMO *choreMO = [NSEntityDescription insertNewObjectForEntityForName:@"Chores" inManagedObjectContext:moc];
+    ChoreMO *choreMO = [NSEntityDescription insertNewObjectForEntityForName:@"Chore" inManagedObjectContext:moc];
     return choreMO;
 }
 

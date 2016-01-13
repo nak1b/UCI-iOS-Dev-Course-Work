@@ -29,6 +29,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJw-qu-DXY">
                                 <rect key="frame" x="70" y="66" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addChore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PKa-aN-WdU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUz-yH-Azg">
                                 <rect key="frame" x="16" y="342" width="288" height="206"/>
@@ -51,6 +54,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zUz-yH-Azg" secondAttribute="bottom" constant="20" id="bor-wF-x0V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="choreList" destination="zUz-yH-Azg" id="1GY-h7-Dp7"/>
+                        <outlet property="chore_name" destination="fku-ti-hdT" id="VnD-qT-7ju"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
