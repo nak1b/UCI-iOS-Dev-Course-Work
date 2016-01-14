@@ -39,6 +39,25 @@
     
 }
 
+- (IBAction)deleteChores:(UIButton *)sender {
+    NSManagedObjectContext *moc = self.appDelegate.managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Chore"];
+    
+    NSError *error = nil;
+    NSArray *results = [moc executeFetchRequest:request error:&error];
+    if(!results){
+        NSLog(@"Error fetching request: %@ \n %@", [error localizedDescription], [error userInfo]);
+        abort();
+    }
+    
+    for(ChoreMO *c in results){
+        [moc deleteObject:c];
+    }
+    
+    [self.appDelegate saveContext];
+    [self updateLogList];
+}
+
 -(void) updateLogList{
     NSManagedObjectContext *moc = self.appDelegate.managedObjectContext;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Chore"];

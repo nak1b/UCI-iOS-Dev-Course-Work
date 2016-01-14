@@ -27,8 +27,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJw-qu-DXY">
-                                <rect key="frame" x="70" y="66" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="56" y="66" width="73" height="30"/>
+                                <state key="normal" title="Add Chore"/>
                                 <connections>
                                     <action selector="addChore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PKa-aN-WdU"/>
                                 </connections>
@@ -42,9 +42,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOb-Jx-PKn">
+                                <rect key="frame" x="138" y="189" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteChores:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NLi-lR-Fc5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zUz-yH-Azg" firstAttribute="top" secondItem="MOb-Jx-PKn" secondAttribute="bottom" constant="123" id="25f-Fb-w5R"/>
                             <constraint firstAttribute="leadingMargin" secondItem="fku-ti-hdT" secondAttribute="leading" id="8nJ-1L-ozg"/>
                             <constraint firstItem="zUz-yH-Azg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9Z3-hh-TLY"/>
                             <constraint firstItem="hJw-qu-DXY" firstAttribute="top" secondItem="fku-ti-hdT" secondAttribute="bottom" constant="16" id="CuP-4f-9SG"/>
@@ -52,6 +60,7 @@
                             <constraint firstItem="hJw-qu-DXY" firstAttribute="centerX" secondItem="fku-ti-hdT" secondAttribute="centerX" id="Wsw-Q6-Sdf"/>
                             <constraint firstItem="zUz-yH-Azg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bV9-R5-VoW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zUz-yH-Azg" secondAttribute="bottom" constant="20" id="bor-wF-x0V"/>
+                            <constraint firstItem="MOb-Jx-PKn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xOs-It-OCZ"/>
                         </constraints>
                     </view>
                     <connections>
