@@ -23,6 +23,7 @@
     [super viewDidLoad];
     
     self.appDelegate = [[UIApplication sharedApplication] delegate];
+    [self updateLogList];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,7 +40,22 @@
 }
 
 -(void) updateLogList{
+    NSManagedObjectContext *moc = self.appDelegate.managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Chore"];
     
+    NSError *error = nil;
+    NSArray *results = [moc executeFetchRequest:request error:&error];
+    if(!results){
+        NSLog(@"Error fetching request: %@ \n %@", [error localizedDescription], [error userInfo]);
+        abort();
+    }
+    
+    NSMutableString *buf = [NSMutableString stringWithString:@""];
+    
+    for(ChoreMO *c in results){
+        [buf appendFormat: @"\n%@", c.chore_name, nil];
+    }
+    self.choreList.text = buf;
 }
 
 @end
