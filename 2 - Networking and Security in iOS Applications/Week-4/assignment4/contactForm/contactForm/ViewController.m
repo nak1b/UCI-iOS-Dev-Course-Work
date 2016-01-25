@@ -43,6 +43,10 @@
     contact.email = self.email.text;
     contact.phone = self.phone.text;
     
+    self.name.text = @"";
+    self.email.text = @"";
+    self.phone.text = @"";
+    
     [self.appDelegate saveContext];
     [self updateLogList];
 }
@@ -71,5 +75,23 @@
 
 
 - (IBAction)deleteRecords:(UIButton *)sender {
+    NSManagedObjectContext *moc = self.appDelegate.managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Contact"];
+    NSError *error = nil;
+    NSArray *results = [moc executeFetchRequest:request error:&error];
+    
+    if(!results){
+        NSLog(@"Error fetching contact object");
+        abort();
+    }
+    
+    
+    for(ContactMO *c in results){
+        [moc deleteObject:c];
+    }
+    
+    [self.appDelegate saveContext];
+    [self updateLogList];
+    
 }
 @end
