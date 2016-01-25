@@ -14,6 +14,8 @@
 		31B35F671C5595E5004D153F /* contactForm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31B35F651C5595E5004D153F /* contactForm.xcdatamodeld */; };
 		31B35F691C5595E5004D153F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B35F681C5595E5004D153F /* Assets.xcassets */; };
 		31B35F6C1C5595E5004D153F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B35F6A1C5595E5004D153F /* LaunchScreen.storyboard */; };
+		31B35F771C55D45E004D153F /* ContactMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B35F741C55D45E004D153F /* ContactMO+CoreDataProperties.m */; };
+		31B35F781C55D45E004D153F /* ContactMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B35F761C55D45E004D153F /* ContactMO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		31B35F681C5595E5004D153F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31B35F6B1C5595E5004D153F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31B35F6D1C5595E5004D153F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31B35F731C55D45E004D153F /* ContactMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ContactMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		31B35F741C55D45E004D153F /* ContactMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ContactMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		31B35F751C55D45E004D153F /* ContactMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactMO.h; sourceTree = "<group>"; };
+		31B35F761C55D45E004D153F /* ContactMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactMO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,10 @@
 		31B35F4D1C5595E5004D153F = {
 			isa = PBXGroup;
 			children = (
+				31B35F731C55D45E004D153F /* ContactMO+CoreDataProperties.h */,
+				31B35F741C55D45E004D153F /* ContactMO+CoreDataProperties.m */,
+				31B35F751C55D45E004D153F /* ContactMO.h */,
+				31B35F761C55D45E004D153F /* ContactMO.m */,
 				31B35F581C5595E5004D153F /* contactForm */,
 				31B35F571C5595E5004D153F /* Products */,
 			);
@@ -152,7 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B35F781C55D45E004D153F /* ContactMO.m in Sources */,
 				31B35F671C5595E5004D153F /* contactForm.xcdatamodeld in Sources */,
+				31B35F771C55D45E004D153F /* ContactMO+CoreDataProperties.m in Sources */,
 				31B35F611C5595E5004D153F /* ViewController.m in Sources */,
 				31B35F5E1C5595E5004D153F /* AppDelegate.m in Sources */,
 				31B35F5B1C5595E5004D153F /* main.m in Sources */,
