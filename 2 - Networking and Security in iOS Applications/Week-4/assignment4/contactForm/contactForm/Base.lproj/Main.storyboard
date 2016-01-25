@@ -42,6 +42,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8N8-Is-2RR">
                                 <rect key="frame" x="20" y="192" width="92" height="30"/>
                                 <state key="normal" title="Save Contact"/>
+                                <connections>
+                                    <action selector="addContact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sx1-Vr-su1"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VuY-YZ-7NK">
                                 <rect key="frame" x="20" y="351" width="280" height="197"/>
@@ -66,6 +69,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-aD-Yev">
                                 <rect key="frame" x="195" y="192" width="105" height="30"/>
                                 <state key="normal" title="Delete Records"/>
+                                <connections>
+                                    <action selector="deleteRecords:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a5p-wA-WGv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -87,6 +93,13 @@
                             <constraint firstItem="fkx-e7-qtr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wi5-c3-nQk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contactCount" destination="5id-RU-och" id="OMQ-5t-mIZ"/>
+                        <outlet property="contactLogList" destination="VuY-YZ-7NK" id="7Zg-UT-yq4"/>
+                        <outlet property="email" destination="7H2-Cj-rct" id="fDv-AL-XLQ"/>
+                        <outlet property="name" destination="ELU-Zv-ihy" id="E4H-eg-CDm"/>
+                        <outlet property="phone" destination="fkx-e7-qtr" id="wCT-RI-FbF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

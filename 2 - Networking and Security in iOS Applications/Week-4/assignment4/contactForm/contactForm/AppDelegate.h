@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ContactMO.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,6 +21,7 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+- (ContactMO *) createContactMO;
 
 @end
 
