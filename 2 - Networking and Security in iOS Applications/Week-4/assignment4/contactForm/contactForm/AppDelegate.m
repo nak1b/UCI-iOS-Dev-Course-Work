@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ContactMO.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,16 @@
     
     return YES;
 }
+
+
+#pragma mark - My manage code
+
+- (ContactMO *) createContactMO{
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    ContactMO *contactMO = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:moc];
+    return contactMO;
+}
+
 
 #pragma mark - Core Data stack
 
