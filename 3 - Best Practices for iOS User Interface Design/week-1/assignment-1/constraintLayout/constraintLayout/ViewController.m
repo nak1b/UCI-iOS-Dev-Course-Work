@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "MapKit/MapKit.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIWebView *webVIew;
 
 @end
 
@@ -16,7 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //Loading Webview with the link
+    NSString *urlString = @"https://www.facebook.com/NiagaraFallsTourism/";
+    NSURLRequest *request  = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    [self.webVIew loadRequest:request];
+    
+    //Loading location on to the map
 }
 
 - (void)didReceiveMemoryWarning {
