@@ -26,6 +26,19 @@
     [self.webVIew loadRequest:request];
     
     //Loading location on to the map
+    double longitude = -79.0667;
+    double lattitde = 43.1167;
+    
+    MKPointAnnotation *niagraAnnotation = [[MKPointAnnotation alloc] init];
+    niagraAnnotation.coordinate = CLLocationCoordinate2DMake(lattitde, longitude);
+    niagraAnnotation.title = @"Niagra Falls, Falls View";
+    [self.mapView addAnnotation:niagraAnnotation];
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(niagraAnnotation.coordinate, 10000, 10000);
+    MKCoordinateRegion adjusted = [self.mapView regionThatFits:region];
+    [self.mapView setRegion:adjusted animated:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
