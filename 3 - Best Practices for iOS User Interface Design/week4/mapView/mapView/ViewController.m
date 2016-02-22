@@ -28,12 +28,19 @@
 }
 
 - (IBAction)torontoClicked:(id)sender {
+    [self centerMap:self.torontoAnnotation];
 }
 
 - (IBAction)vancouverClicked:(id)sender {
+     [self centerMap:self.vancouverAnnotation];
 }
 
 - (IBAction)houstonClicked:(id)sender {
+     [self centerMap:self.houstonAnnotation];
+}
+
+- (void) centerMap: (MKPointAnnotation *) centerPoint {
+    [self.mapView setCenterCoordinate:centerPoint.coordinate animated:true];
 }
 
 
