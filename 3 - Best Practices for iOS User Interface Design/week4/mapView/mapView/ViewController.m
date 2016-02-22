@@ -9,7 +9,7 @@
 #import "MapKit/MapKit.h"
 #import "ViewController.h"
 
-@interface ViewController () <CLLocationManagerDelegate>
+@interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
+@property (nonatomic, assign) BOOL mapIsMoving;
+
 @end
 
 @implementation ViewController
@@ -29,6 +31,7 @@
     [super viewDidLoad];
     [self addAnnotation];
     
+    self.mapIsMoving = NO;
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
@@ -58,7 +61,10 @@
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations{
     self.currentAnnotation.coordinate = locations.lastObject.coordinate;
-    [self centerMap:self.currentAnnotation];
+    if (self.mapIsMoving == NO) {
+         [self centerMap:self.currentAnnotation];
+    }
+   
 }
 
 - (void) centerMap: (MKPointAnnotation *) centerPoint {
@@ -85,6 +91,15 @@
     
     
     [self.mapView addAnnotations: @[self.torontoAnnotation, self.vancouverAnnotation, self.houstonAnnotation]];
+}
+
+- (void) mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
+    self.mapIsMoving = YES;
+}
+
+
+- (void) mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    self.mapIsMoving = NO;
 }
 
 @end
