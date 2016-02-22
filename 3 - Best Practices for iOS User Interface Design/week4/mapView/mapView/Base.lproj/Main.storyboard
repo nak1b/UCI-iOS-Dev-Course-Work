@@ -21,6 +21,33 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2HN-Gh-Dlf">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem style="plain" id="cnc-gh-SEy">
+                                        <view key="customView" contentMode="scaleToFill" id="vlj-e4-wce">
+                                            <rect key="frame" x="20" y="6" width="159" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locate Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-MY-u6c">
+                                                    <rect key="frame" x="0.0" y="6" width="80" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-sd-pBw">
+                                                    <rect key="frame" x="110" y="1" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PiR-Dm-BfS"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="uAV-MY-u6c" firstAttribute="leading" secondItem="vlj-e4-wce" secondAttribute="leading" id="BP0-4X-yBw"/>
+                                                <constraint firstItem="uAV-MY-u6c" firstAttribute="centerY" secondItem="vlj-e4-wce" secondAttribute="centerY" id="Tbb-KH-v4n"/>
+                                                <constraint firstItem="hZP-sd-pBw" firstAttribute="centerY" secondItem="vlj-e4-wce" secondAttribute="centerY" id="Uio-fv-YY0"/>
+                                                <constraint firstAttribute="trailing" secondItem="hZP-sd-pBw" secondAttribute="trailing" id="mEQ-xa-4w9"/>
+                                            </constraints>
+                                        </view>
+                                    </barButtonItem>
                                     <barButtonItem title="Toronto" id="KgY-sO-49k">
                                         <connections>
                                             <action selector="torontoClicked:" destination="BYZ-38-t0r" id="qU4-Qj-FIe"/>
@@ -57,10 +84,12 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="iMK-xO-suI" id="O2q-Mr-teX"/>
+                        <outlet property="switchBtn" destination="hZP-sd-pBw" id="LPe-TU-gk6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="315"/>
         </scene>
     </scenes>
 </document>
