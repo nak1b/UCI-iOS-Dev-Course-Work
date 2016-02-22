@@ -38,6 +38,20 @@
 
 
 - (void) addAnnotation{
+    self.torontoAnnotation = [[MKPointAnnotation alloc] init];
+    self.torontoAnnotation.coordinate = CLLocationCoordinate2DMake(43.717899, -79.6582407);
+    self.torontoAnnotation.title = @"Toronto";
+    
+    self.vancouverAnnotation = [[MKPointAnnotation alloc] init];
+    self.vancouverAnnotation.coordinate = CLLocationCoordinate2DMake(49.2562176, -123.1939537);
+    self.vancouverAnnotation.title = @"Vancouver";
+    
+    self.houstonAnnotation = [[MKPointAnnotation alloc] init];
+    self.houstonAnnotation.coordinate = CLLocationCoordinate2DMake(29.8174782, -95.6814916);
+    self.houstonAnnotation.title = @"Houston";
+    
+    
+    [self.mapView addAnnotations: @[self.torontoAnnotation, self.vancouverAnnotation, self.houstonAnnotation]];
 }
 
 @end
