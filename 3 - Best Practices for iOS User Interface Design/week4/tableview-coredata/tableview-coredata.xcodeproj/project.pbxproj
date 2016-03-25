@@ -14,6 +14,7 @@
 		3155000B1CA5BF28008AFE9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315500091CA5BF28008AFE9B /* LaunchScreen.storyboard */; };
 		315500161CA5C00F008AFE9B /* ToDoEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 315500131CA5C00F008AFE9B /* ToDoEntity+CoreDataProperties.m */; };
 		315500171CA5C00F008AFE9B /* ToDoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 315500151CA5C00F008AFE9B /* ToDoEntity.m */; };
+		3155001A1CA5C256008AFE9B /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 315500191CA5C256008AFE9B /* TableViewCell.m */; };
 		3155FFFA1CA5BF28008AFE9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3155FFF91CA5BF28008AFE9B /* main.m */; };
 		3155FFFD1CA5BF28008AFE9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3155FFFC1CA5BF28008AFE9B /* AppDelegate.m */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,8 @@
 		315500131CA5C00F008AFE9B /* ToDoEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDoEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		315500141CA5C00F008AFE9B /* ToDoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoEntity.h; sourceTree = "<group>"; };
 		315500151CA5C00F008AFE9B /* ToDoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoEntity.m; sourceTree = "<group>"; };
+		315500181CA5C256008AFE9B /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		315500191CA5C256008AFE9B /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		3155FFF51CA5BF28008AFE9B /* tableview-coredata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tableview-coredata.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3155FFF91CA5BF28008AFE9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3155FFFB1CA5BF28008AFE9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				3155000C1CA5BF28008AFE9B /* Info.plist */,
 				315500041CA5BF28008AFE9B /* tableview_coredata.xcdatamodeld */,
 				3155FFF81CA5BF28008AFE9B /* Supporting Files */,
+				315500181CA5C256008AFE9B /* TableViewCell.h */,
+				315500191CA5C256008AFE9B /* TableViewCell.m */,
 			);
 			path = "tableview-coredata";
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3155001A1CA5C256008AFE9B /* TableViewCell.m in Sources */,
 				315500161CA5C00F008AFE9B /* ToDoEntity+CoreDataProperties.m in Sources */,
 				315500061CA5BF28008AFE9B /* tableview_coredata.xcdatamodeld in Sources */,
 				315500001CA5BF28008AFE9B /* ViewController.m in Sources */,
