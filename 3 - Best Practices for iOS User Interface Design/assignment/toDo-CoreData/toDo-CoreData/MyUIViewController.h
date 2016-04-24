@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DPHandlesMOC.h"
 
-@interface MyUIViewController : UIViewController
+@interface MyUIViewController : UIViewController <DPHandlesMOC>
+
+- (void) recieveMOC:(NSManagedObjectContext *)incomingMOC;
 
 @end

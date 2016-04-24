@@ -10,7 +10,9 @@
 
 @interface MyUIViewController ()
 
-@end
+@property (strong, nonatomic) NSManagedObjectContext *managedbjectContext;
+
+ @end
 
 @implementation MyUIViewController
 
@@ -33,5 +35,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) recieveMOC:(NSManagedObjectContext *)incomingMOC{
+    self.managedbjectContext = incomingMOC;
+    
+}
+
 
 @end

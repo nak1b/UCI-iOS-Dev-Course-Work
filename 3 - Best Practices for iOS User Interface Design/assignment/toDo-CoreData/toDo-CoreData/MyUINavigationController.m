@@ -8,7 +8,9 @@
 
 #import "MyUINavigationController.h"
 
-@interface MyUINavigationController ()
+@interface MyUINavigationController () 
+
+@property (strong, nonatomic) NSManagedObjectContext *managedbjectContext;
 
 @end
 
@@ -33,5 +35,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) recieveMOC:(NSManagedObjectContext *)incomingMOC{
+    self.managedbjectContext = incomingMOC;
+    id <DPHandlesMOC> child = (id<DPHandlesMOC>) self.viewControllers[0];
+    [child recieveMOC:self.managedbjectContext];
+}
 
 @end

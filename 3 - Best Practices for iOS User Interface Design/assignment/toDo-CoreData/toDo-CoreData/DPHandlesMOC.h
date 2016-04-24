@@ -10,6 +10,6 @@
 
 @protocol DPHandlesMOC <NSObject>
 
-- (void) recieveMOC: (NSManagedOnjectContext *)incomingMOC;
+- (void) recieveMOC: (NSManagedObjectContext *)incomingMOC;
 
 @end
